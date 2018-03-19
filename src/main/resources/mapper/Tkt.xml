@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="Tkt">
+    
+    <cache/>
+    
+    <select id="select" parameterType="Map" resultType="java.util.HashMap" >
+        select * from Tkt.Tkt 
+        <where>
+            <if test="Id != null" >
+                Id = #{Id}
+            </if>
+        </where>
+    </select>
+    
+    <select id="selectById" resultType="java.util.HashMap" >
+        select * from Tkt.Tkt WHERE Id = #{Id}
+    </select>
+
+
+    <select id="selectPriority" resultType = "java.util.HashMap" >
+        SELECT Priority `Key`, count(Priority) `Value`
+        FROM Tkt.Tkt group by Priority
+        Union 
+        SELECT 'total request' `Key`, count(*) from Tkt.Tkt
+    </select>    
+    
+
+    <insert id="insert" parameterType="Map" useGeneratedKeys="true" keyProperty="Id">
+        INSERT INTO `Tkt`.`Tkt`
+        (   
+            `Tool`,
+            `Priority`,
+            `Status`,
+            `Description`,
+            `AttachFilename`,
+            `CreatedBy`,
+            `ModifiedBy`
+        )
+          VALUES 
+        (
+            #{Tool},
+            #{Priority},
+            #{Status},
+            #{Description},
+            #{AttachFilename},
+            #{CdId},
+            #{CdId}
+        )
+    </insert>
+
+    <update id="update" parameterType="Map" >
+        
+        UPDATE Tkt.Tkt SET
+            `Tool` = #{Tool},
+            `Priority` = #{Priority},
+            `Status` = #{Status},
+            `Description` = #{Description},
+            `Attachfilename` = #{AttachFilename},
+            `ModifiedBy` = #{CdId}
+        Where 
+            Id = #{Id}
+    </update>
+
+    <delete id="delete" >
+        DELETE from Tkt.Tkt Where Id = #{Id}
+    </delete>
+
+
+</mapper>

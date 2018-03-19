@@ -1,0 +1,111 @@
+/*.comment-view {
+    display:block;
+    font:inherit;
+    color:#222; 
+}*/
+
+.comment-view {
+    font:normal 11px tahoma, arial, helvetica, sans-serif;
+    margin: 5px;
+    padding:3px 10px 3px 10px;
+    border:1px solid #aaa;
+    border-radius: 8px;
+    white-space:normal;
+    color:#555;
+}
+.comment-view .user-audit {
+    float: right;
+    font-weight:normal; 
+    clear:none;
+}
+.comment-view p {
+    padding-top: 2px;
+    margin-top: 2px;
+    border-top: 1px solid grey;
+    font-weight:normal;
+    margin-bottom: 5px;
+    background: beige; 
+}
+.comment-view table {
+    width: 100%;
+    border-spacing:2px;
+    border-collapse:separate;
+}
+.comment-view .innertable {
+    width: 100%;
+    border-spacing:0px;
+}
+.comment-view .innertable td  {
+    border-bottom: none;
+}
+.comment-view table td {
+    border-bottom:1px dotted #aaa;
+}
+.comment-view table .last-row td {
+   border-bottom: none;
+}
+
+
+
+.rec-display {
+    
+    margin: 5px;
+    padding:3px 10px 3px 10px;
+    border:1px solid #aaa;
+    border-radius: 8px;
+    white-space:normal;
+    color:#555;
+}
+.rec-display {
+    display:block;
+    font:inherit;
+    color:#222; 
+}
+
+.rec-display .user-audit {
+    float: right;
+    font-weight:normal; 
+    clear:none;
+}
+
+.rec-display p {
+    padding-top: 3px;
+    border-top: 1px solid grey;
+    font-weight:normal;
+    margin-bottom: 5px;
+    background: beige;
+    
+}
+.rec-display table {
+    width: 100%;
+    border-spacing:2px;
+    border-collapse:separate;
+   
+}
+
+.rec-display .innertable {
+    width: 100%;
+    border-spacing:0px;
+}
+.rec-display .innertable td  {
+    border-bottom: none;
+}
+
+.rec-display table td {
+    font:normal 12px tahoma, arial, helvetica, sans-serif;
+    border-bottom:1px dotted #aaa;
+}
+.rec-display table .last-row td {
+   border-bottom: none;
+}
+
+.rec-display a:link {text-decoration:none;}    /* unvisited link */
+.rec-display a:visited {text-decoration:none;} /* visited link */
+.rec-display a:hover {text-decoration:underline;}   /* mouse over link */
+.rec-display a:active {text-decoration:underline;}  /* selected link */
+
+.status-clicked {
+    background-image:url('redcircle.png');
+    background-size:25px 25px;
+    background-position: -3px;
+}

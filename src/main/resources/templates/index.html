@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css?v=50"/>
+        <link rel="stylesheet" type="text/css" href="ext/examples/shared/example.css" />
+        <link rel="stylesheet" type="text/css" href="css/tkt.css" />
+        <script type="text/javascript" src="ext/ext-all-debug.js"></script>
+
+        
+        <title>Tkt Server</title>
+    </head>
+    
+    <script type="text/javascript" >
+        
+        
+        Ext.Loader.setConfig({enabled:true});
+        Ext.Loader.setPath('Ext.ux', 'ext/examples/ux');
+
+        Ext.onReady(function(){
+            
+            Ext.Loader.setPath('Tkt', 'js/Tkt');
+            var tkt = Ext.create("Tkt.Main").start();
+            tkt.fireEvent("openList", tkt, 'Priority:total');
+            tkt.fireEvent("openStatus");
+
+    
+        });
+        
+    </script>    
+    <body>
+       <!-- <div id ="mainpanel" style="width: 600px; height: 700px; " /> -->
+
+        <form th:action="@{/logout}" method="post">
+            <input style="position:fixed;right:0;top:0;" type="submit" value="Sign Out"/>
+        </form>
+    </body>    
+
+</html>
